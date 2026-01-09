@@ -7,9 +7,34 @@ where manager_id not in (select employee_id from employees)
 
 
 626.Exchange seat
+
+
 select case when id%2=1 and id+1 in(select id from seat) then id+1 
     when id%2=0 then id-1
     else id
     end as id,student 
 from seat
 order by id
+
+
+1907. Count Salary Categories
+
+
+SELECT 'Low Salary' AS category,
+       COUNT(*)     AS accounts_count
+FROM Accounts
+WHERE income < 20000
+
+UNION ALL
+
+SELECT 'Average Salary' AS category,
+       COUNT(*)         AS accounts_count
+FROM Accounts
+WHERE income BETWEEN 20000 AND 50000
+
+UNION ALL
+
+SELECT 'High Salary' AS category,
+       COUNT(*)       AS accounts_count
+FROM Accounts
+WHERE income > 50000;
