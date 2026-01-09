@@ -38,3 +38,13 @@ SELECT 'High Salary' AS category,
        COUNT(*)       AS accounts_count
 FROM Accounts
 WHERE income > 50000;
+
+
+
+
+1731.The Number of Employees Which Report to Each Employee
+
+select e.employee_id,e.name,count(e1.employee_id )as reports_count,round(avg(e1.age)) as average_age 
+from employees e join employees e1
+on e.employee_id  = e1.reports_to 
+group by employee_id ,name    
