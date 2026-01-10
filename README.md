@@ -51,6 +51,7 @@ group by employee_id ,name
 
 
 1405.Customers who bought all the products
+
 select customer_id from customer
 group by customer_id
 having count(product_key)=2
