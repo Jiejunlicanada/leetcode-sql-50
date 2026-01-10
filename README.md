@@ -48,3 +48,9 @@ select e.employee_id,e.name,count(e1.employee_id )as reports_count,round(avg(e1.
 from employees e join employees e1
 on e.employee_id  = e1.reports_to 
 group by employee_id ,name    
+
+
+1405.Customers who bought all the products
+select customer_id from customer
+group by customer_id
+having count(product_key)=2
