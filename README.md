@@ -62,4 +62,13 @@ having count(product_key)=2
 
 select user_id,count(*)as followers_count
 from Followers  
-group by user_id
+group by user_id;
+
+
+
+596.Classes with at least 5 students
+
+select class
+from courses
+group by class
+having count(*) >= 5;
