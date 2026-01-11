@@ -55,3 +55,11 @@ group by employee_id ,name
 select customer_id from customer
 group by customer_id
 having count(product_key)=2
+
+
+
+1729.Find Followers Count
+
+select user_id,count(*)as followers_count
+from Followers  
+group by user_id
