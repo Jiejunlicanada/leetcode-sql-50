@@ -91,7 +91,7 @@ where (player_id, date_sub(event_date, interval 1 day) ) in
 (select player_id,min(event_date)from activity);
 
 
-1993.Monthly Transactions I 
+1193.Monthly Transactions I 
 
 select left(trans_date,7)as month,
        country,
@@ -103,3 +103,11 @@ from
     Transactions
 group by 
     month, country;
+
+
+1705.Project employees I
+
+select p.project_id,avg(e.experience_years )as average_years 
+from project p left join employee e
+using(employee_id)
+group by project_id;
