@@ -89,3 +89,17 @@ select round(count(distinct player_id )/(select count(distinct player_id ) from 
 from Activity 
 where (player_id, date_sub(event_date, interval 1 day) ) in
 (select player_id,min(event_date)from activity);
+
+
+1993.Monthly Transactions I 
+
+select left(trans_date,7)as month,
+       country,
+       count(state) as trans_count,
+       sum(state = "approved ") as approved_count,
+       sum(amount) as trans_total_amount,
+       sum((state = 'approved') * amount) as approved_total_amount
+from 
+    Transactions
+group by 
+    month, country;
